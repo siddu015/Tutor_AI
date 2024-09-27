@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Speech Recognition Test</title>
+</head>
+<body>
+<h1>Speech Recognition Test</h1>
+<button onclick="startRecognition()">Start Recognition</button>
+<p id="result"></p>
+
+<script>
+    function startRecognition() {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+
+        recognition.start();
+
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            document.getElementById('result').textContent = "You said: " + transcript;
+        };
+
+        recognition.onerror = function(event) {
+            console.error('Recognition error:', event.error);
+            alert("Error: " + event.error);
+        };
+    }
+</script>
+</body>
+</html>
