@@ -3,8 +3,10 @@
 from django.shortcuts import render
 from .ml_model import predict
 
+
 def index(request):
     return render(request, 'webbot/index.htm')
+
 
 def bot_search(request):
     query = request.GET.get('query')

@@ -3,6 +3,7 @@
 import wolframalpha
 import wikipedia
 
+
 def predict(query):
     try:
         # Connect to WolframAlpha API

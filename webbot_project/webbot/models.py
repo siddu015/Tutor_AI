@@ -2,11 +2,13 @@
 
 from django.db import models
 
+
 class Subject(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
+
 
 class Topic(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
@@ -15,6 +17,7 @@ class Topic(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Quiz(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
