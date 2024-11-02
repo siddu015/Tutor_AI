@@ -35,7 +35,7 @@ ROOT_URLCONF = 'webbot_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'webbot', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'webbot_project/../webbot', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -53,12 +53,12 @@ WSGI_APPLICATION = 'webbot_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'webbot_project/../db.sqlite3'),
     }
 }
 
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'webbot_project/../static'),
 ]
