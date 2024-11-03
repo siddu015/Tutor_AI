@@ -11,6 +11,7 @@ nlp_generator = pipeline("text-generation", model="gpt2")
 
 
 def predict(query):
+
     """Generates an answer for a given query using WolframAlpha, Wikipedia, or NLP models."""
 
     # First, try WolframAlpha for structured queries (math, science, factual data).
